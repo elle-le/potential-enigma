@@ -3,12 +3,12 @@ entries:
   elle-chart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-02-26T17:56:42.414718+01:00"
+    created: "2025-02-26T21:48:48.290048+01:00"
     description: A Helm chart for Kubernetes
-    digest: 5b4812c4a9848a4214e89d67f4223ef33155fe26bb3d13495c49992330a1ab32
+    digest: f8e768dc56a0ab97be357cf75beaeb1ba98c32b371f317f3999ee3fed364c9b7
     name: elle-chart
     type: application
     urls:
-    - elle-chart-0.1.0.tgz
-    version: 0.1.0
-generated: "2025-02-26T17:56:42.413734+01:00"
+    - elle-chart-0.1.1.tgz
+    version: 0.1.1
+generated: "2025-02-26T21:48:48.288796+01:00"
