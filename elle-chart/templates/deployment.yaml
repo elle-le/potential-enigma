@@ -21,7 +21,11 @@ spec:
         imagePullPolicy: {{ $config.image.pullPolicy }}
         ports:
         - containerPort: {{ $app.service.port }}
+      {{- if $config.imagePullSecrets }}
       imagePullSecrets:
-      - name: {{ $config.imagePullSecrets[0].name }}
+        {{- range $secret := $config.imagePullSecrets }}
+        - name: {{ $secret.name }}
+        {{- end }}
+      {{- end }}
 {{- end }}
 {{- end }}
