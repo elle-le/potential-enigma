@@ -1,3 +1,5 @@
+{{- range $app, $config := .Values.apps }}
+{{- if $config.service }}
 apiVersion: v1
 kind: Pod
 metadata:
@@ -13,3 +15,6 @@ spec:
       command: ['wget']
       args: ['{{ include "elle-chart.fullname" . }}:{{ .Values.service.port }}']
   restartPolicy: Never
+---
+{{- end }}
+{{- end }}
