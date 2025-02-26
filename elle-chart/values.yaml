@@ -36,3 +36,5 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+fullnameOverride: ""
