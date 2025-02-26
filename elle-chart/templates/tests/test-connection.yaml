@@ -3,9 +3,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "{{ include "elle-chart.fullname" . }}-test-connection"
+  name: "{{ $.Release.Name }}-{{ $app }}-test-connection"
   labels:
-    {{- include "elle-chart.labels" . | nindent 4 }}
+    app: "{{ $.Release.Name }}-{{ $app }}"
   annotations:
     "helm.sh/hook": test
 spec:
@@ -13,7 +13,7 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "elle-chart.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ $.Release.Name }}-{{ $app }}:{{ $config.service.port }}']
   restartPolicy: Never
 ---
 {{- end }}

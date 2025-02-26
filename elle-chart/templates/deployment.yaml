@@ -20,7 +20,7 @@ spec:
         image: {{ $config.image.repository }}:{{ $config.image.tag }}
         imagePullPolicy: {{ $config.image.pullPolicy }}
         ports:
-        - containerPort: {{ $app.service.port }}
+        - containerPort: {{ $config.service.port}}
       {{- if $config.imagePullSecrets }}
       imagePullSecrets:
         {{- range $secret := $config.imagePullSecrets }}
