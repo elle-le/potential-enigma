@@ -1,13 +1,24 @@
 replicaCount: 1
 
 apps:
-  app:
+  app1:
     image:
-      repository: default-repo/app
+      repository: default-repo/app1
       tag: latest
       pullPolicy: Always
     service:
-      name: app-service
+      name: app1-service
+      type: ClusterIP
+      port: 5001
+    imagePullSecrets: []
+
+  app2:
+    image:
+      repository: default-repo/app2
+      tag: latest
+      pullPolicy: Always
+    service:
+      name: app2-service
       type: ClusterIP
       port: 5000
     imagePullSecrets: []
